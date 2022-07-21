@@ -597,3 +597,171 @@ import math
 # print(even_or_odd(1))
 # print(even_or_odd(0))
 ################################
+
+# def test(A, B):
+#     for i in enumerate(B):
+#         if max(B) >= A:
+#             B.remove(max(B))
+#         else:
+#             return max(B)
+#
+#
+# print(test(13, [3, 5, 7, 4, 11, 13]))
+###########################################
+# Let's imagine we have a popular online RPG. A player begins with a score of 0 in class E5.
+# A1 is the highest level a player can achieve.
+#
+# Now let's say the players wants to rank up to class E4.
+# To do so the player needs to achieve at least 100 points to enter the qualifying stage.
+#
+# Write a script that will check to see if the player has achieved at least 100 points in his class.
+# If so, he enters the qualifying stage.
+#
+# In that case, we return, "Well done! You have advanced to the qualifying stage.
+# Win 2 out of your next 3 games to rank up.".
+#
+# Otherwise return, False/false (according to the language in use).
+#
+# NOTE
+# : Remember, in C# you have to cast your output value to Object type!
+# def playerRankUp(pts: int):
+#     text = "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up."
+#     return text if pts >= 100 else False
+#
+#
+# print(playerRankUp(100))
+# This is a demo task.
+#
+# Write a function:
+#
+# def solution(A)
+#
+# that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
+#
+# For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
+#
+# Given A = [1, 2, 3], the function should return 4.
+#
+# Given A = [−1, −3], the function should return 1.
+#
+# Write an efficient algorithm for the following assumptions:
+#
+# N is an integer within the range [1..100,000];
+# each element of array A is an integer within the range [−1,000,000..1,000,000].
+# def solution(A):
+#     test = list(set(A))
+#     result = 1
+#     for i in range(len(test) - 1):
+#         if test[i] > 0:
+#             if test[i + 1] - test[i] != 1:
+#                 result = test[i] + 1
+#                 break
+#     if result == 1:
+#         if test[0] == 1:
+#             result = max(test) + 1
+#     return result
+#
+#
+# print(solution([1, 3, 6, 4, 1, 2, 11, 7]))
+#######################################
+# def solution(A):
+#     result = []
+#     for i, v in enumerate(A):
+#         if result.count(v) == 0:
+#             result.append(v)
+#
+#     return result
+#
+#
+# print(solution([1, 4, 7, 9,4, 5, 3]))
+# import math
+# def solution(S):
+#     result = S.split(',')
+#     result2 = []
+#     for i, v in enumerate(result):
+#         try:
+#             result2.append(float(v))
+#         except:
+#             pass
+#     return 0 if len(result2) == 0 else math.floor(sum(result2) / len(result2))
+#
+# print(solution('1.5, 3, 5, 6.5'))
+# print(solution('1.5, 3, 5, 6.5,444444'))
+# print(solution('g,hj,k,l'))
+######################################
+# There exist two zeroes: +0 (or just 0) and -0.
+#
+# Write a function that returns true if the input number is -0 and false otherwise (True and False for Python).
+#
+# In JavaScript / TypeScript / Coffeescript the input will be a number.
+#
+# In Python / Java / C / NASM / Haskell / the input will be a float.
+# def is_negative_zero(n):
+#     return True if n == 0 and str(n)[0] == '-' else False
+#
+#
+# print(is_negative_zero(-0.0))
+# print(is_negative_zero(0.0))
+# print(is_negative_zero(-3.0))
+#########################
+# def reverse_list(lst):
+#     return lst[::-1]
+#
+#
+# print(reverse_list([3, 5, 7, 8, 4, 6]))
+######################################
+# Write a function partlist that gives all the ways to divide a list (an array)
+# of at least two elements into two non-empty parts.
+#
+# Each two non empty parts will be in a pair
+# (or an array for languages without tuples or a structin C - C: see Examples test Cases - )
+# Each part will be in a string
+# Elements of a pair must be in the same order as in the original array.
+# Examples of returns in different languages:
+# a = ["az", "toto", "picaro", "zone", "kiwi"] -->
+# [["az", "toto picaro zone kiwi"], ["az toto", "picaro zone kiwi"],
+# ["az toto picaro", "zone kiwi"], ["az toto picaro zone", "kiwi"]]
+# def partlist(arr):
+#     first_part = ''
+#     second_part = ''
+#     for i, v in enumerate(arr):
+#         if i <= len(arr) / 2:
+#             first_part += v
+#         else:
+#             second_part += v
+#     return [first_part, second_part]
+#
+#
+# print(partlist(["I", "wish", "I", "hadn't", "come"]))
+############################
+# Help Suzuki rake his garden!
+#
+# The monastery has a magnificent Zen garden made of white gravel and rocks and
+# it is raked diligently everyday by the monks. Suzuki having a keen eye is
+# always on the lookout for anything creeping into the garden that must be removed
+# during the daily raking such as insects or moss.
+#
+# You will be given a string representing the garden such as:
+#
+# garden = 'gravel gravel gravel gravel gravel gravel gravel gravel gravel rock slug ant
+# gravel gravel snail rock gravel gravel gravel gravel gravel gravel gravel slug gravel ant
+# gravel gravel gravel gravel rock slug gravel gravel gravel gravel gravel snail gravel gravel
+# rock gravel snail slug gravel gravel spider gravel gravel gravel gravel gravel gravel gravel
+# gravel moss gravel gravel gravel snail gravel gravel gravel ant gravel gravel moss gravel gravel
+# gravel gravel snail gravel gravel gravel gravel slug gravel rock gravel gravel rock gravel gravel
+# gravel gravel snail gravel gravel rock gravel gravel gravel gravel gravel spider gravel rock gravel gravel'
+# Rake out any items that are not a rock or gravel and replace them with gravel such that:
+#
+# garden = 'slug spider rock gravel gravel gravel gravel gravel gravel gravel'
+# Returns a string with all items except a rock or gravel replaced with gravel:
+#
+# garden = 'gravel gravel rock gravel gravel gravel gravel gravel gravel gravel'
+# def rake_garden(garden):
+#     result = [i for i in garden.split()]
+#     for i, v in enumerate(result):
+#         if v != 'rock' and v != 'gravel':
+#             result[i] = 'gravel'
+#     return ' '.join(result)
+#
+#
+# print(rake_garden('rock gravel jgdgd gravel rock gravel gravel gravel gravel gravel gravel gravel'))
