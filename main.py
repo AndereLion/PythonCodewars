@@ -812,3 +812,80 @@ import math
 #
 # print(no_space('dfgdgdg dgdgdd'))
 #######################################
+# You get an array of numbers, return the sum of all of the positives ones.
+#
+# Example [1,-4,7,12] => 1 + 7 + 12 = 20
+#
+# Note: if there is nothing to sum, the sum is default to 0.
+# def positive_sum(arr):
+#     return sum([i for i in arr if i > 0])
+#
+# print(positive_sum([1, -4, 7, 12]))
+####################################
+# Triangular numbers are so called because of the equilateral triangular shape that they occupy when laid out as dots.
+# i.e.
+#
+# 1st (1)   2nd (3)    3rd (6)
+# *          **        ***
+#            *         **
+#                      *
+# You need to return the nth triangular number. You should return 0 for out of range values:
+#
+# For example: (Input --> Output)
+#
+# 0 --> 0
+# 2 --> 3
+# 3 --> 6
+# -10 --> 0
+# Bad performance !!!!
+# def triangular(n):
+#     if n <= 0:
+#         return 0
+#     result = 1
+#     for i in range(1, n):
+#         result += i + 1
+#     return result
+#
+#
+# print(triangular(5))
+
+
+# 3/6
+# ***
+# **
+# *
+# 4/10
+# ****
+# ***
+# **
+# *
+# 5/15
+# *****
+# ****
+# ***
+# **
+# *
+######################################
+# There was a test in your class and you passed it. Congratulations!
+# But you're an ambitious person. You want to know if you're better than the average student in your class.
+#
+# You receive an array with your peers' test scores. Now calculate the average and compare your score!
+#
+# Return True if you're better, else False!
+#
+# Note:
+# Your points are not included in the array of your class's points.' \
+# ' For calculating the average point you may add your point to the given array!
+#
+# def better_than_average(class_points, your_points):
+#     return True if sum(class_points) / len(class_points) < your_points else False
+#
+# print(better_than_average([2, 3, 6], 5))
+######################################
+# def heron(a, b, c):
+#     s = (a + b + c) / 2
+#     return round(math.sqrt(s * (s - a) * (s - b) * (s - c)), 2)
+#
+#
+# print(heron(3, 4, 5))
+###########################################
