@@ -320,20 +320,38 @@
 ##################################################
 # import decimal
 # import math
+# #
+# from decimal import *
+# import math
+#
+# getcontext().prec = 1000
+# from decimal import *
+#
+# getcontext().prec = 1000
 #
 #
 # def fibonacci(n):
-#     # a = 0
-#     # b = 1
-#     # if n == 1:
-#     #     return 1
-#     # for i in range(n-1):
-#     #     b = a + b
-#     #     a = b - a
-#     #
-#     # return b
-#     decimal.getcontext().prec = 100
-#     return decimal.Decimal((1 / math.sqrt(5)) * ((((1 + math.sqrt(5)) / 2) ** n) - (((1 - math.sqrt(5)) / 2) ** n)))
+#     return int(Decimal((Decimal(1) / Decimal(5).sqrt()) * (
+#                 (((Decimal(1) + Decimal(5).sqrt()) / Decimal(2)) ** Decimal(n)) - (
+#                     ((Decimal(1) - Decimal(5).sqrt()) / Decimal(2)) ** Decimal(n)))))
+
+
+# def fibonacci(n):
+# a = 0
+# b = 1
+# if n == 1:
+#     return 1
+# for i in range(n-1):
+#     b = a + b
+#     a = b - a
+#
+# return b
+
+# return int(Decimal((Decimal(1) / Decimal(Decimal(5).sqrt())) * (
+#             (((Decimal(1) + Decimal(Decimal(5).sqrt())) / Decimal(2)) ** Decimal(n)) - (
+#                 ((Decimal(1) - Decimal(Decimal(5).sqrt())) / Decimal(2)) ** Decimal(n)))))
+
+
 #
 #
 # print(fibonacci(925))
@@ -845,10 +863,21 @@ import math
 #     for i in range(1, n):
 #         result += i + 1
 #     return result
+# from decimal import *
+#
+# getcontext().prec = 100
 #
 #
+# def triangular(n):
+#     return int(Decimal(Decimal(n) * Decimal(n) / Decimal(2) + (Decimal(n) / Decimal(2)))) if n > 0 else 0
+#
+#
+# print(triangular(555555555555555))
+# print(triangular(2))
+# print(triangular(3))
+# print(triangular(4))
 # print(triangular(5))
-
+# print(triangular(6))
 
 # 3/6
 # ***
@@ -860,6 +889,12 @@ import math
 # **
 # *
 # 5/15
+# *****
+# ****
+# ***
+# **
+# 6/21
+# ******
 # *****
 # ****
 # ***
@@ -889,3 +924,71 @@ import math
 #
 # print(heron(3, 4, 5))
 ###########################################
+# ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or
+# exactly 6 digits.
+#
+# If the function is passed a valid PIN string, return true, else return false.
+#
+# Examples (Input --> Output)
+# "1234"   -->  true
+# "12345"  -->  false
+# "a234"   -->  false
+# def validate_pin(pin):
+#     if len(pin) == 4 or len(pin) == 6:
+#         try:
+#             [int(v) for v in pin]
+#             return True
+#         except:
+#             return False
+#     else:
+#         return False
+# Second
+# def validate_pin(pin):
+#     return len(pin) in (4, 6) and pin.isdigit()
+#
+#
+# print(validate_pin('4444'))
+# print(validate_pin('55555'))
+# print(validate_pin('1234b'))
+# print(validate_pin('a1234'))
+# print(validate_pin('666666'))
+#######################
+# The new £5 notes have been recently released in the UK and they've certainly became a sensation!
+# Even those of us who haven't been carrying any cash around for a while,
+# having given in to the convenience of cards, suddenly like to have some of these in
+# their purses and pockets. But how many of them could you get with what's left from your
+# salary after paying all bills? The programme that you're about to write will count this for you!
+#
+# Given a salary and the array of bills, calculate your disposable income for a month and return it as a number of new £5 notes you can get with that amount. If the money you've got (or do not!) doesn't allow you to get any £5 notes return 0.
+#
+# £££ GOOD LUCK! £££
+# import math
+#
+#
+# def get_new_notes(salary, bills):
+#     return math.floor((salary - sum(bills)) / 5) if math.floor((salary - sum(bills)) / 5) > 0 else 0
+#
+#
+# print(get_new_notes(2000, [500, 160, 400]))
+########################
+# def calculate_distance(r):
+#     return r * -1.63299
+#
+#
+# print(calculate_distance(10))
+#
+# Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+#
+# For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter;
+# and month 11 (November), is part of the fourth quarter.
+# def quarter_of(month):
+#     if 0 < month / 3 <= 1:
+#         return 1
+#     elif 1 < month / 3 <= 2:
+#         return 2
+#     elif 2 < month / 3 <= 3:
+#         return 3
+#     elif 3 < month / 3 <= 4:
+#         return 4
+#
+# print(quarter_of(12))
