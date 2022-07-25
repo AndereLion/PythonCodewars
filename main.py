@@ -473,7 +473,6 @@
 #     return i
 import math
 
-
 #
 # def closest_multiple_10(i):
 #     if i < 10:
@@ -992,3 +991,50 @@ import math
 #         return 4
 #
 # print(quarter_of(12))
+########################
+# Given an array of integers, return a new array with each value doubled.
+#
+# For example:
+#
+# [1, 2, 3] --> [2, 4, 6]
+# def maps(a):
+#     return [v * 2 for v in a]
+#
+#
+# print(maps([1, 2, 3]))
+#########################
+# In this simple exercise, you will build a program that takes a value, integer ,
+# and returns a list of its multiples up to another value, limit . If limit is
+# a multiple of integer, it should be included as well. There will only ever be positive integers
+# passed into the function, not consisting of 0. The limit will always be higher than the base.
+#
+# For example, if the parameters passed are (2, 6), the function should
+# return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
+#
+# If you can, try writing it in only one line of code.
+# def find_multiples(integer, limit):
+#     return [v for v in range(integer, limit, integer)]
+#
+#
+# print(find_multiples(2, 12))
+# print(find_multiples(5, 25))
+
+##################################
+"""
+Count the number of divisors of a positive integer n.
+
+Random tests go up to n = 500000.
+
+Examples (input --> output)
+4 --> 3 (1, 2, 4)
+5 --> 2 (1, 5)
+12 --> 6 (1, 2, 3, 4, 6, 12)
+30 --> 8 (1, 2, 3, 5, 6, 10, 15, 30)
+"""
+#
+#
+# def divisors(n):
+#     return len([v for v in range(1, n+1) if n % v == 0])
+#
+#
+# print(divisors(5))
