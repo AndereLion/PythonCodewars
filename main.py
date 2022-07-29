@@ -1031,6 +1031,8 @@ Examples (input --> output)
 12 --> 6 (1, 2, 3, 4, 6, 12)
 30 --> 8 (1, 2, 3, 5, 6, 10, 15, 30)
 """
+
+
 #
 #
 # def divisors(n):
@@ -1038,3 +1040,36 @@ Examples (input --> output)
 #
 #
 # print(divisors(5))
+# def sum_corners(n):
+#     return int(1 + (n * n / 2 + (n / 2) - n + 1) + (n * n / 2 + (n / 2)))
+#
+#
+# print(sum_corners(3))
+###########################
+# def sum_mix(arr):
+#     return sum([int(v) for v in arr])
+#
+#
+# print(sum_mix([1, 2, 3, 4, '5', '6']))
+#############################
+# Given a mixed array of number and string representations of integers,
+# add up the string integers and subtract this from the total of the non-string integers.
+#
+# Return as a number.
+# def div_con(x):
+#     int_numbers = []
+#     str_numbers = []
+#     for v in x:
+#         if type(v) == int:
+#             int_numbers.append(v)
+#         else:
+#             str_numbers.append(int(v))
+#     return sum(int_numbers) - sum(str_numbers)
+#####
+# def div_con(x):
+#     int_numbers = [v for v in x if type(v) == int]
+#     str_numbers = [int(v) for v in x if type(v) == str]
+#     return sum(int_numbers) - sum(str_numbers)
+#
+#
+# print(div_con([9, 3, '7', '3']))
