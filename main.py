@@ -916,7 +916,7 @@ import math
 #
 # print(better_than_average([2, 3, 6], 5))
 ######################################
-# def heron(a, b, c):
+# f herdeon(a, b, c):
 #     s = (a + b + c) / 2
 #     return round(math.sqrt(s * (s - a) * (s - b) * (s - c)), 2)
 #
@@ -1073,3 +1073,36 @@ Examples (input --> output)
 #
 #
 # print(div_con([9, 3, '7', '3']))
+########################################
+
+# def words_to_marks(s):
+#     result = 0
+#     for i, v in enumerate(s.lower()):
+#         result += ord(v) - 96
+#     return result
+#
+#
+# print(words_to_marks('love'))
+###################################
+# Complete the solution so that it returns true if the first argument(string)
+# passed in ends with the 2nd argument (also a string).
+#
+# Examples:
+#
+# solution('abc', 'bc') # returns true
+# solution('abc', 'd') # returns false
+# def solution(string, ending):
+#     if ending == '':
+#         return True
+#     if len(ending) > len(string):
+#         return False
+#     string = string[::-1]
+#     ending = ending[::-1]
+#     for i, v in enumerate(ending):
+#         if v != string[i]:
+#             return False
+#
+#     return True
+#
+#
+# print(solution('sumo', 'mommfmf'))
